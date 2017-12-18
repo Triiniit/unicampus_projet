@@ -1,0 +1,8 @@
+{
+  "name": "unicampus_projet",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
