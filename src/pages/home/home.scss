@@ -1,14 +1,61 @@
-page-home {
-    ion-list, ion-item{
-        background:transparent
+page-home{
+  div{
+    button {
+      border-color: black !important;
+      border-width: 2px !important;
+      border-radius: 8px !important; 
+      background-color: #BDFBEE !important;
+      color: black !important;
+  }
+    #Button1{
+      border-bottom: 2px solid white;
+      padding-bottom: 36px;
+      padding-top: 50px;
+    }
+    #Button2{
+      padding-top: 36px; 
+    }
+  }
+      
+  
+      .scroll-content{
+          // background-color: rgb(236,237,237);
+          background-image:linear-gradient($unicampusPrimary, $unicampusSecondary);
+          align-content: center;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
       }
-      .item-ios{
-        background: transparent;
+      
+      ion-label{
+          font-weight:500;
+          color:#FFFFFF;
       }
-
-
-
-
- 
-
-}
+  
+      #logoUniCampusHome {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -130px;
+        margin-bottom: 15px; 
+        display: block;
+        width: 50vw;
+      }
+  
+      .connexion {
+          background-color: $unicampusTercary;
+  
+          p {
+              text-align: center;
+          }
+  
+          .formConnexion {
+              padding: 4px;
+  
+              ion-input {
+                  margin: 10px 0;
+                  background: rgba(255, 255, 255, 0.5);
+                  border-radius: 3px; 
+              }
+          }
+      }
+  }

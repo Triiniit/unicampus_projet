@@ -9,11 +9,13 @@
       <ion-input type="password" placeholder="Password"></ion-input>
 
       <p>Mot de passe oublié ?
-        <a href="#">Clique ici</a>
+        <span>Clique ici</span>
       </p>
       <div padding>
         <button ion-button block round outline tappable>Connexion</button>
       </div>
+      <p>OU</p>
+      <p>Pas de compte? <span (click)="registerPage()">Inscrivez vous</span></p>
     </form>
 
   </div>

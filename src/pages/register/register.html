@@ -1,0 +1,44 @@
+<ion-content>
+    <div class="connexion">
+        <p>Bienvenue sur UniCampus !</p>
+        <div class="formConnexion">
+            <ion-input type="text" placeholder="Prénom"></ion-input>
+            <ion-input type="text" placeholder="Nom"></ion-input>
+
+            <ion-item>
+                <ion-select placeholder="sexe" cancelText="Annuler">
+                    <ion-option value="Homme">Homme</ion-option>
+                    <ion-option value="Femme">Femme</ion-option>
+                </ion-select>
+            </ion-item>
+
+
+            <ion-input type="mail" placeholder="Email de l'IUT"></ion-input>
+            <ion-input type="password" placeholder="Password"></ion-input>
+
+            <ion-item>
+                <ion-select placeholder="ville" cancelText="Annuler">
+                    <ion-option value="Tarbes">Tarbes</ion-option>
+                    <ion-option value="Toulouse">Toulouse</ion-option>
+                </ion-select>
+            </ion-item>
+
+
+            <ion-item>
+                <ion-select placeholder="section" cancelText="Annuler">
+                    <ion-option value="MMI">MMI</ion-option>
+                    <ion-option value="TC">TC</ion-option>
+                </ion-select>
+            </ion-item>
+
+
+            <p>Déjà inscrit ?
+                <span (click)="login()">Se connecter</span>
+            </p>
+            <div padding>
+                <button ion-button block round outline tappable>Inscription</button>
+            </div>
+        </div>
+
+    </div>
+</ion-content>
