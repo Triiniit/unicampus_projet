@@ -2,7 +2,7 @@ page-register{
     button {
         border-color: white !important;
         border-width: 2px !important;
-       color: white;
+       color: white !important;
       }
 
     .scroll-content{
@@ -39,10 +39,23 @@ page-register{
 
             ion-input {
                 margin: 10px 0;
-                background: rgba(255, 255, 255, 0.5);
+                background: rgba(148, 174, 171, 0.5);
                 border-radius: 3px; 
-                placeholder-color : black;
+                color : black !important;
             }
+            ion-item{
+                background: none;
+                padding: 0;
+                border:0px !important;
+                ion-select{
+                    margin: 10px 0;
+                   width: 100vw;
+                    background: rgba(148, 174, 171, 0.5);
+                    border-radius: 3px; 
+                    color : black !important;
+                }
+            }
+           
         }
     }
 }
