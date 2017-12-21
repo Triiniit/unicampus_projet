@@ -2,44 +2,61 @@
     <div class="connexion">
         <p id="message">Bienvenue sur UniCampus !</p>
         <div class="formConnexion">
-            <ion-input type="text" placeholder="Prénom" id="prenom"></ion-input>
-            <p id="errorPrenom"></p>
-            <ion-input type="text" placeholder="Nom" id="nom"></ion-input>
-            <p id="errorNom"></p>
+
+            <ion-input type="text" placeholder="Prénom" 
+            ngModel
+            name="prenom"
+            #prenom = "ngModel"></ion-input>
+
+            <ion-input type="text" placeholder="Nom" 
+            ngModel
+            name="nom"
+            #nom = "ngModel"></ion-input>
+
             <ion-item>
-                <ion-select placeholder="sexe" cancelText="Annuler" id="sexe">
+                <ion-select placeholder="sexe" cancelText="Annuler"
+                ngModel
+                name="sexe"
+                #sexe = "ngModel">
                     <ion-option value="Homme">Homme</ion-option>
                     <ion-option value="Femme">Femme</ion-option>
                 </ion-select>
             </ion-item>
-            <p id="errorSexe"></p>
 
-            <ion-input type="mail" placeholder="Email de l'IUT" id="mail"></ion-input>
-            <p id="errorMail"></p>
-            <ion-input type="password" placeholder="Password" id="mdp"></ion-input>
-            <p id="errorMdp"></p>
+            <ion-input type="mail" placeholder="Email de l'IUT" 
+            ngModel
+            name="mail"
+            #mail = "ngModel"></ion-input>
+
+            <ion-input type="password" placeholder="Password" 
+            ngModel
+            name="mdp"
+            #mdp = "ngModel"></ion-input>
+
             <ion-item>
-                <ion-select placeholder="ville" cancelText="Annuler" id="ville">
+                <ion-select placeholder="ville" cancelText="Annuler" ngModel
+                name="ville"
+                #ville = "ngModel">
                     <ion-option value="Tarbes">Tarbes</ion-option>
                     <ion-option value="Toulouse">Toulouse</ion-option>
                 </ion-select>
             </ion-item>
-            <p id="errorVille"></p>
 
             <ion-item>
-                <ion-select placeholder="section" cancelText="Annuler" id="section">
+                <ion-select placeholder="section" cancelText="Annuler" ngModel
+                name="section"
+                #section = "ngModel">
                     <ion-option value="MMI">MMI</ion-option>
                     <ion-option value="TC">TC</ion-option>
                 </ion-select>
             </ion-item>
-            <p id="errorSection"></p>
 
 
             <p>Déjà inscrit ?
                 <span (click)="login()">Se connecter</span>
             </p>
             <div padding>
-                <button ion-button block round outline tappable (click)="verrifChamp()">Inscription</button>
+                <button ion-button block round outline tappable (click)="verrifChamp(nom.value, prenom.value, sexe.value, mail.value, mdp.value, ville.value, section.value)">Inscription</button>
             </div>
         </div>
 

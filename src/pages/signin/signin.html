@@ -5,14 +5,19 @@
     <p>Bienvenue</p>
     <form action="#" class="formConnexion">
 
-      <ion-input type="mail" placeholder="Email de l'IUT"></ion-input>
-      <ion-input type="password" placeholder="Password"></ion-input>
+      <ion-input type="mail" placeholder="Email de l'IUT" 
+      ngModel
+      name="mail"
+      #mail = "ngModel"></ion-input>
+      <ion-input type="password" placeholder="Password" ngModel
+      name="mdp"
+      #mdp = "ngModel"></ion-input>
 
       <p>Mot de passe oublié ?
         <span>Clique ici</span>
       </p>
       <div padding>
-        <button ion-button block round outline tappable>Connexion</button>
+        <button ion-button block round outline tappable (click)="conect(mail.value, mdp.value)">Connexion</button>
       </div>
       <p>OU</p>
       <p>Pas de compte? <span (click)="registerPage()">Inscrivez vous</span></p>

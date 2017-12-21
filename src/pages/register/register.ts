@@ -9,78 +9,82 @@ import { SigninPage } from "../signin/signin";
 
 
 export class RegisterPage {
-  public users: User[];
-  public nom = document.getElementById("nom").nodeValue;
-  public prenom = document.getElementById("prenom").nodeValue;
-  public sexe = document.getElementById("sexe").nodeValue;
-  public mail = document.getElementById("mail").nodeValue;
-  public mdp = document.getElementById("mdp").nodeValue;
-  public ville = document.getElementById("ville").nodeValue;
-  public section = document.getElementById("section").nodeValue;
+  public users: User[] = [];
   public villes: String[] = ["Castres", "Tarbes", "Toulouse"];
   public sexes: String[] = ["Homme", "Femme"];
   public sections: String[] = ["MMI", "TC"];
-  public message = document.getElementById("message");
-  public errorPrenom = document.getElementById("errorPrenom");
-  public errorNom = document.getElementById("errorNom");
-  public errorSexe = document.getElementById("errorSexe");
-  public errorMail = document.getElementById("errorMail");
-  public errorMdp = document.getElementById("errorMdp");
-  public errorVille = document.getElementById("errorVille");
-  public errorSection = document.getElementById("errorSection");
+
 
   constructor(public navCtrl: NavController) {
 
   }
+  //fonction pour rediriger vers la page de connexion
   login() {
     this.navCtrl.push(SigninPage);
   }
-  addUser() {
-      let user = new User(this.nom, this.prenom, this.sexe, this.mail, this.mdp, this.ville, this.section);
-      this.users.push(user);
-      if (this.users.indexOf(user) != null) {
-        this.login();
-      } else {
-        this.message.nodeValue = "ERREUR DE TYPE INCONNUE, UTILISATEUR NON AJOUTÉ!!!"
-      }
-    
+
+  //fonction appellé si les champs ne sont pas vide pour créer un utilisateur
+  addUser(nom, prenom, sexe, mail, mdp, ville, section) {
+    //création d'un utilisateur avec les variables entrée dans le formulaire
+    let user = new User(nom, prenom, sexe, mail, mdp, ville, section);
+    //ajout de l'utilisateur au tableau qui contient tout les utilisateurs
+    this.users.push(user);
+    if (this.users.indexOf(user) != null) {
+      this.login();
+    } else {
+    }
+
   }
-  verrifChamp() {
+  public get Users(): User[] {
+    return this.users;
+  }
+  //on verifie si les champs sont vide (ret = false) ou pas avant de lancer un message d'ereur 
+  //ou d'essayer d'enregister un utilisateur
+  verrifChamp(nom, prenom, sexe, mail, mdp, ville, section) {
+    //ret permet de dire si oui ou non il y a au moins un champ de vide
     let ret: Boolean;
+    //message permet de construire un message d'erreur
+    let message: String;
     ret = true;
-    if (this.nom == "") {
-      this.errorNom.nodeValue = "REMPLIR SON NOM!!!";
+    //tout les if verifie chaque champ
+    if (nom == "") {
+      message = message + "NOM, ";
       ret = false;
     }
-    if (this.prenom == "") {
-      this.errorPrenom.nodeValue = "REMPLIR SON PRÉNOM!!!";
+    if (prenom == "") {
+      message = message + "PRÉNOM, ";
       ret = false;
     }
-    if (this.sexe == "" || this.sexe == "sexe") {
-      this.errorNom.nodeValue = "INDIQUEZ VOTRE SEXE!!!";
+    if (sexe == "" || sexe == "sexe") {
+      message = message + "SEXE, ";
       ret = false;
     }
-    if (this.mail == "") {
-      this.errorMail.nodeValue = "REMPLIR SON MAIL!!!";
+    if (mail == "") {
+      message = message + "MAIL, ";
       ret = false;
     }
-    if (this.mdp == "") {
-      this.errorMdp.nodeValue = "REMPLIR SON MOT DE PASSE!!!";
+    if (mdp == "") {
+      message = message + "MOT DE PASSE, ";
       ret = false;
     }
-    if (this.ville == "" || this.ville == "ville") {
-      this.errorVille.nodeValue = "INDIQUEZ VOTRE VILLE!!!";
+    if (ville == "" || ville == "ville") {
+      message = message + "VILLE, ";
       ret = false;
     }
-    if (this.section == "" || this.section == "section") {
-      this.errorSection.nodeValue = "INDIQUEZ VOTRE SECTION!!!";
+    if (section == "" || section == "section") {
+      message = message + "SECTION, ";
       ret = false;
     }
-    if (ret == true){
-    this.addUser();
+    //si aucun champ n'est vide on appelle la fonction qui ajoute un utilisateur
+    if (ret == true) {
+      this.addUser(nom, prenom, sexe, mail, mdp, ville, section);
+    } else {
+      //on affiche le message d'erreur complet pour dire quel champ est mal rempli
+      alert(message + "VIDE OU MAL REMPLI!!!");
     }
   }
 }
+//classe créé pour définir à quoi doit ressembler un utilisateur
 export class User {
   nom: String;
   prenom: String;
