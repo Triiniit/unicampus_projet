@@ -47,12 +47,22 @@ page-register{
                 background: none;
                 padding: 0;
                 border:0px !important;
-                ion-select{
-                    margin: 10px 0;
-                   width: 100vw;
-                    background: rgba(148, 174, 171, 0.5);
-                    border-radius: 3px; 
-                    color : black !important;
+                &.item-block {
+                    .item-inner {
+                        border-bottom: none;
+                        padding: 0;
+                        ion-select{
+                            width: 100%;
+                            max-width: 100% !important;
+                            background: rgba(148, 174, 171, 0.5);
+                            border-radius: 3px;
+                            color : black !important;
+                            
+                            &.section {
+                                margin-top: 10px;
+                            }
+                        }
+                    }
                 }
             }
            
