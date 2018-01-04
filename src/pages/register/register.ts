@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { SigninPage } from "../signin/signin";
-
+import { ServiceConnexion } from'../../service-connexion';
 @Component({
   selector: 'page-register',
   templateUrl: 'register.html'
@@ -9,7 +9,7 @@ import { SigninPage } from "../signin/signin";
 
 
 export class RegisterPage {
-  public users: User[] = [];
+  public connexion : ServiceConnexion;
   public villes: String[] = ["Castres", "Tarbes", "Toulouse"];
   public sexes: String[] = ["Homme", "Femme"];
   public sections: String[] = ["MMI", "TC"];
@@ -28,15 +28,14 @@ export class RegisterPage {
     //création d'un utilisateur avec les variables entrée dans le formulaire
     let user = new User(nom, prenom, sexe, mail, mdp, ville, section);
     //ajout de l'utilisateur au tableau qui contient tout les utilisateurs
-    this.users.push(user);
-    if (this.users.indexOf(user) != null) {
+    //this.users.push(user);
+    this.connexion.users.push(user)
+    if (this.connexion.users.indexOf(user) != null) {
       this.login();
     } else {
+      alert("MAUVAIS IDENTIFIENTS");
     }
 
-  }
-  public get Users(): User[] {
-    return this.users;
   }
   //on verifie si les champs sont vide (ret = false) ou pas avant de lancer un message d'ereur 
   //ou d'essayer d'enregister un utilisateur
