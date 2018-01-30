@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { SigninPage } from "../signin/signin";
 import { ServiceConnexion } from'../../service-connexion';
+import { User } from '../../user';
 @Component({
   selector: 'page-register',
   templateUrl: 'register.html'
@@ -9,34 +10,21 @@ import { ServiceConnexion } from'../../service-connexion';
 
 
 export class RegisterPage {
-  public connexion : ServiceConnexion;
-  public villes: String[] = ["Castres", "Tarbes", "Toulouse"];
+ // public connexion : ServiceConnexion;
+  public villes: String[] = [];
   public sexes: String[] = ["Homme", "Femme"];
   public sections: String[] = ["MMI", "TC"];
 
 
-  constructor(public navCtrl: NavController) {
-
+  constructor(public navCtrl: NavController, public connexion : ServiceConnexion) {
+    this.villes = this.connexion.getVilles();
   }
   //fonction pour rediriger vers la page de connexion
   login() {
     this.navCtrl.push(SigninPage);
   }
 
-  //fonction appellé si les champs ne sont pas vide pour créer un utilisateur
-  addUser(nom, prenom, sexe, mail, mdp, ville, section) {
-    //création d'un utilisateur avec les variables entrée dans le formulaire
-    let user = new User(nom, prenom, sexe, mail, mdp, ville, section);
-    //ajout de l'utilisateur au tableau qui contient tout les utilisateurs
-    //this.users.push(user);
-    this.connexion.users.push(user)
-    if (this.connexion.users.indexOf(user) != null) {
-      this.login();
-    } else {
-      alert("MAUVAIS IDENTIFIENTS");
-    }
-
-  }
+  
   //on verifie si les champs sont vide (ret = false) ou pas avant de lancer un message d'ereur 
   //ou d'essayer d'enregister un utilisateur
   verrifChamp(nom, prenom, sexe, mail, mdp, ville, section) {
@@ -74,30 +62,17 @@ export class RegisterPage {
       message = message + "SECTION, ";
       ret = false;
     }
-    //si aucun champ n'est vide on appelle la fonction qui ajoute un utilisateur
+    //si aucun champ n'est vide  essaye d'appeller la fonction qui ajoute un utilisateur
     if (ret == true) {
-      this.addUser(nom, prenom, sexe, mail, mdp, ville, section);
+      let user = new User(nom, prenom, sexe, mail, mdp, ville, section);
+      if (this.connexion.addUser(user)) {
+        this.login();
+      }else{
+        alert("ERREUR UTILISATEUR NON AJOUTÉ!!!!")
+      } 
     } else {
       //on affiche le message d'erreur complet pour dire quel champ est mal rempli
       alert(message + "VIDE OU MAL REMPLI!!!");
     }
-  }
-}
-//classe créé pour définir à quoi doit ressembler un utilisateur
-export class User {
-  nom: String;
-  prenom: String;
-  sexe: String;
-  mail: String;
-  mdp: String;
-  ville: String;
-  section: String;
-  constructor(nom: String, prenom: String, sexe: String, mail: String, mdp: String, ville: String, section: String) {
-    this.nom = nom;
-    this.prenom = prenom;
-    this.sexe = sexe;
-    this.mail = mail;
-    this.ville = ville;
-    this.section = section;
   }
 }
