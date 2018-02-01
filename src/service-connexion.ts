@@ -6,9 +6,10 @@ export class ServiceConnexion {
     private villes: String[] = ["Auch","Castres", "Tarbes", "Toulouse"];
     private sexes: String[] = ["Homme", "Femme"];
     private sections: String[] = ["MMI", "TC"];
-
+// ici c'est le service angular qui permets de faire le lien avec la base de données pour la création 
+//d'utilisateur et la connexion
     constructor() { 
-      let user = new User("Dupont", "Jean", "Homme", "jean.dupont@mail.fr", "toto", "Castres", "MMI");
+      let user = new User("Dupont", "Jean", "Homme", "mail@fai.fr", "mdp", "Castres", "MMI");
       this.users.push(user);
   }
 /**

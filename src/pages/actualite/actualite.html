@@ -1,4 +1,50 @@
+<ion-header>
+  <!-- affichage de la navbar dans le code-->
+  <ion-navbar>
+    <ion-title>
+      <!-- le ion-item permet d'avoir un affichage des icones et du text sur une ligne (le item-start sera le premier icone affiché )-->
+      <!-- le item-end sera le dernier icone affiché-->
+      <ion-item id="title">
+        <ion-icon name="chatboxes" item-start></ion-icon>
+        Actualités
+        <ion-icon name="person" item-end></ion-icon>
+      </ion-item>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
 <ion-content>
-  <p>ACTUALITE</p>
- 
+  <!-- affichage des stories-->
+  <div class="story">
+    <p>stories</p>
+    <!-- zone contenant l'ajout d'une storie -->
+    <div id="add">
+
+      <ion-icon name="add-circle" class="storicon"></ion-icon>
+      <p>Ajouter</p>
+    </div>
+  </div>
+  <!-- affichage des bouttons-->
+  <div id="Bouttons">
+    <!-- boutton pour ajouter une actualité-->
+    <div id="actualite">
+      <!-- ion-item est la pour avoir tout sur une ligne-->
+        <ion-item id="actuboutton">
+      <p id="texte">Publication</p>
+      <p id="soustexte">Exprimez-vous...</p>
+      <ion-icon name="create" item-end id="actualicon"></ion-icon>
+      </ion-item>
+    </div>
+    <!-- boutton pour le co-voiturage-->
+    <div id="covoiturage">
+      <!-- ion-item est la pour avoir tout sur une ligne-->
+        <ion-item id="covoituragebutton">
+      <p id="texte2">Co-voiturage</p>
+      <p id="soustexte2">Ne roulez plus seul...</p>
+      <ion-icon name="car" item-end id="covoicon"></ion-icon>
+      </ion-item>
+    </div>
+  </div>
+
+
+
 </ion-content>

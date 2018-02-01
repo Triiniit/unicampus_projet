@@ -1,6 +1,8 @@
 <ion-content>
+    <!-- comme pour signin.html ici on affiche l'arrière plant de couleur vert foncé-->
     <div class="connexion">
         <p id="message">Bienvenue sur UniCampus !</p>
+        <!-- ici on affiche le formulaire-->
         <div class="formConnexion">
 
             <ion-input type="text" placeholder="Prénom" 
@@ -14,12 +16,14 @@
             #nom = "ngModel"></ion-input>
 
             <ion-item>
+              
                 <ion-select placeholder="sexe" cancelText="Annuler"
                 ngModel
                 name="sexe"
                 #sexe = "ngModel">
-                    <ion-option value="Homme">Homme</ion-option>
-                    <ion-option value="Femme">Femme</ion-option>
+                <!-- le *ngFor fonctionne comme un foreach est irra lire toute les valeurs des tableaux-->
+                <!-- dans register.ts (par exemple ici on va chercher dans le tableau sexe) pour remplir dinamiquement le menu déroulant--> 
+                <ion-option *ngFor="let sexe of sexes" value="{{ sexe }}">{{ sexe }}</ion-option>
                 </ion-select>
             </ion-item>
 
@@ -37,8 +41,7 @@
                 <ion-select placeholder="ville" cancelText="Annuler" ngModel
                 name="ville"
                 #ville = "ngModel">
-                    <ion-option value="Tarbes">Tarbes</ion-option>
-                    <ion-option value="Toulouse">Toulouse</ion-option>
+                <ion-option *ngFor="let ville of villes" value="{{ ville }}">{{ ville }}</ion-option>
                 </ion-select>
             </ion-item>
 
@@ -46,8 +49,7 @@
                 <ion-select placeholder="section" cancelText="Annuler" ngModel
                 name="section" class="section"
                 #section = "ngModel">
-                    <ion-option value="MMI">MMI</ion-option>
-                    <ion-option value="TC">TC</ion-option>
+                <ion-option *ngFor="let section of sections" value="{{ section }}">{{ section }}</ion-option>
                 </ion-select>
             </ion-item>
 

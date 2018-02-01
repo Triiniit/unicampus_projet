@@ -11,6 +11,7 @@ import { SoireePage } from '../soiree/soiree';
 })
 export class TabsPage {
 
+  //gestions des root des tables (pour les lien redirection vers tel ou tel page)
   tab1Root = ActualitePage;
   tab2Root = HorrairePage;
   tab3Root = BonplansPage;

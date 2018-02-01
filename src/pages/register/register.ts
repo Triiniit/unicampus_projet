@@ -12,12 +12,16 @@ import { User } from '../../user';
 export class RegisterPage {
  // public connexion : ServiceConnexion;
   public villes: String[] = [];
-  public sexes: String[] = ["Homme", "Femme"];
-  public sections: String[] = ["MMI", "TC"];
+  public sexes: String[] = [];
+  public sections: String[] = [];
 
 
   constructor(public navCtrl: NavController, public connexion : ServiceConnexion) {
+    //ici on se contante d'allez remplir les tableau ci-dessus avec les valeur qu'ils ont dans le service angular 
+    //qui lui irra les remplir via la base de données
     this.villes = this.connexion.getVilles();
+    this.sexes = this.connexion.getSexes();
+    this.sections = this.connexion.getSections();
   }
   //fonction pour rediriger vers la page de connexion
   login() {

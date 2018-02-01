@@ -1,3 +1,138 @@
 page-actualite {
+//géstion du style de la navbar
+    ion-navbar{
+    background:  $unicampusTercary; 
 
 }
+//géstion du style de la navbar
+.toolbar-title{
+    color: white;
+     #title{
+         color: white;
+        width: 100%;
+        font-size: 1.1em;
+        text-align: center;
+        background: none;
+        border:0px !important;
+            padding: 0;
+            border:0px !important;
+            &.item-block {
+                .item-inner {
+                    border-bottom: none;
+                    padding: 0;
+                }
+            }  
+     }
+}
+//supprime le backround de la toolbar ce qui permets de changer la coulleur de la toolbar
+.toolbar-background{
+    background: none;
+}
+    //gestion de la partie scrollable de la page (donc de la page car par défaut elle est scrollable)
+      .scroll-content{
+              background-image:linear-gradient($unicampusPrimary, $unicampusSecondary);
+              display: flex;
+              flex-direction: column;
+
+          }
+          //gestion du style des stories
+          .story{
+            background-color: white;
+            padding: 4px;
+            margin-top:10px;
+            margin-right: 1px;
+            margin-left: 1px;
+            border: 1px solid gray;
+            p{
+                padding: 0px;
+                margin: 0px;
+                margin-left: 3px;
+                font-weight: bold;
+            }
+           #add{
+                border-right: 1px solid gray;
+                margin : 5px;
+                padding-left:2px;
+                padding-right:5px;  
+                display: inline-block;
+
+             .storicon{
+              color: $unicampusTercary;
+              font-size: 50px;
+              padding-top:0px; 
+              margin-top: 0px;
+              padding-right: 8px;
+          }
+          p{
+              padding-left: 0px;
+              margin-left:-5px;
+              font-style: italic;
+              font-weight: bold;
+              text-align: center;
+              font-size: 0.7em;
+          }
+           }
+        }
+        //gestion du style des bouttons
+         #Bouttons{
+            margin-left: 1px;
+            margin-top:5px;
+            //gestion du dtyle du boutton actualité
+          #actualite{
+              display: inline-block;
+              background-color: white;
+              border-right: 1px solid gray;
+              margin-right: 10px;
+              #texte{
+                  margin-bottom: 0px;
+                  margin-left: 20px;
+              }
+              #soustexte{
+                font-style: italic;
+                text-align: center;
+                font-size: 0.7em; 
+                padding-top: 0px;
+                margin-top: 0px;
+                margin-left: 19px;
+              }
+              #actualicon{
+                  margin-left: 20px;
+                  font-size: 40px;
+                  margin-top:0px; 
+              }
+          }
+          //gestion du style du boutton co-voiturage
+          #covoiturage{
+            display: inline-block;
+            background-color: white;
+            border-right: 1px solid gray;
+            margin-left: 0px;
+            margin-top: 2px;
+            
+            #texte2{
+                margin-bottom: 0px;
+                margin-left: 0px;
+            }
+            #soustexte2{
+              font-style: italic;
+              text-align: center;
+              font-size: 0.7em; 
+              padding-top: 0px;
+              margin-top: 0px;
+              margin-left: 0px;
+            }
+            #convoicon{
+                margin-left: 40px;
+                font-size: 60px;
+                margin-top:0px; 
+            }
+            //permets de modifier les style de l'icone du boutton
+            .item ion-icon[item-left], .item ion-icon[item-right], .item ion-icon[item-start], .item ion-icon[item-end]{
+                margin-left: 30px;
+                font-size: 40px;
+            }
+        }
+         }
+         
+}
+
