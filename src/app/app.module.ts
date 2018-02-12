@@ -12,6 +12,7 @@ import { SigninPage } from "../pages/signin/signin";
 import { RegisterPage } from "../pages/register/register";
 import { TabsPage } from '../pages/tabs/tabs';
 import { ServiceConnexion } from './../service-connexion';
+import{ ActuPublicationPage } from '../pages/actuPublication/actuPublication';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -26,7 +27,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SigninPage,
     SoireePage,
     RegisterPage,
-    TabsPage
+    TabsPage,
+    ActuPublicationPage
   ],
   imports: [
     BrowserModule,
@@ -42,7 +44,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SigninPage,
     SoireePage,
     RegisterPage,
-    TabsPage
+    TabsPage,
+    ActuPublicationPage
   ],
   providers: [
     StatusBar,
