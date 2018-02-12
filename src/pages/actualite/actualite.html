@@ -19,14 +19,14 @@
     <!-- zone contenant l'ajout d'une storie -->
     <div id="add">
 
-      <ion-icon name="add-circle" class="storicon"></ion-icon>
+      <ion-icon name="add-circle" class="storicon" (click)="storyAdd()"></ion-icon>
       <p>Ajouter</p>
     </div>
   </div>
   <!-- affichage des bouttons-->
   <div id="Bouttons">
     <!-- boutton pour ajouter une actualité-->
-    <div id="actualite">
+    <div id="actualite" (click)="publication()">
       <!-- ion-item est la pour avoir tout sur une ligne-->
         <ion-item id="actuboutton">
       <p id="texte">Publication</p>
@@ -44,7 +44,17 @@
       </ion-item>
     </div>
   </div>
-
+<div id="news">
+<div id="new">
+    <ion-item id="newinfo">
+<ion-icon name="contact"></ion-icon>
+<div id="text">
+NOM Prénom
+<p>jj/mm/aaaa à hh:mm</p>
+</div>
+</ion-item>
+</div>
+</div>
 
 
 </ion-content>

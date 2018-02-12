@@ -6,6 +6,7 @@ export class ServiceConnexion {
     private villes: String[] = ["Auch","Castres", "Tarbes", "Toulouse"];
     private sexes: String[] = ["Homme", "Femme"];
     private sections: String[] = ["MMI", "TC"];
+    private mail : String;
 // ici c'est le service angular qui permets de faire le lien avec la base de données pour la création 
 //d'utilisateur et la connexion
     constructor() { 
@@ -27,6 +28,12 @@ public getVilles() : String[] {
  public getSections() : String[] {
   return this.sections; 
  }
+ public getMail(){
+   return this.mail;
+ }
+ public setMail(mail : String){
+   this.mail = mail;
+ }
 public verifLogin(login : String, passwd: String): boolean {
   for (var user of this.users) {
     if (user.mail==login && user.mdp==passwd) {
@@ -38,5 +45,14 @@ public verifLogin(login : String, passwd: String): boolean {
 public addUser(user : User):boolean {
   this.users.push(user);
   return true;
+}
+public getUserNameByMail():String{
+  for (var user of this.users) {
+    if (user.mail == this.mail) {
+      return user.prenom + " " + user.nom;
+    } else{
+      return "Monsieur X";
+    }
+}
 }
 }

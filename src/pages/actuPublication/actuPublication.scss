@@ -1,6 +1,6 @@
-page-bonplans {
+page-actuPublication {
     //géstion du style de la navbar
-    ion-navbar{
+        ion-navbar{
         background:  $unicampusTercary; 
     
     }
@@ -28,12 +28,10 @@ page-bonplans {
     .toolbar-background{
         background: none;
     }
-    //gestion de la partie scrollable de la page (donc de la page car par défaut elle est scrollable)
-    .scroll-content{
-        background-image:linear-gradient($unicampusPrimary, $unicampusSecondary);
-        display: flex;
-        flex-direction: column;
-
+    #infoperso{
+        ion-icon{
+            color: $unicampusTercary;
+            font-size: 50px;
+        }
     }
-      
 }

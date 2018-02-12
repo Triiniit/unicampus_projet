@@ -1,34 +1,38 @@
 page-horraire {
-    div{
-        button {
-          border-color: black !important;
-          border-width: 2px !important;
-          border-radius: 8px !important; 
-          background-color: #BDFBEE !important;
-          color: black !important;
-      }
-        #Button1{
-          border-bottom: 2px solid white;
-          padding-bottom: 36px;
-          padding-top: 50px;
-        }
-        #Button2{
-          padding-top: 36px; 
-        }
-      }
-          
-      
-          .scroll-content{
-              // background-color: rgb(236,237,237);
-              background-image:linear-gradient($unicampusPrimary, $unicampusSecondary);
-              align-content: center;
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-          }
-          
-          ion-label{
-              font-weight:500;
-              color:#FFFFFF;
-          }
+   //géstion du style de la navbar
+   ion-navbar{
+    background:  $unicampusTercary; 
+
+}
+//géstion du style de la navbar
+.toolbar-title{
+    color: white;
+     #title{
+         color: white;
+        width: 100%;
+        font-size: 1.1em;
+        text-align: center;
+        background: none;
+        border:0px !important;
+            padding: 0;
+            border:0px !important;
+            &.item-block {
+                .item-inner {
+                    border-bottom: none;
+                    padding: 0;
+                }
+            }  
+     }
+}
+//supprime le backround de la toolbar ce qui permets de changer la coulleur de la toolbar
+.toolbar-background{
+    background: none;
+}
+  //gestion de la partie scrollable de la page (donc de la page car par défaut elle est scrollable)
+  .scroll-content{
+    background-image:linear-gradient($unicampusPrimary, $unicampusSecondary);
+    display: flex;
+    flex-direction: column;
+
+}
 }

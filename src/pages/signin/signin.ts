@@ -25,8 +25,8 @@ export class SigninPage {
 
   conect(mail, mdp) {
     if (this.connexion.verifLogin(mail,mdp)) {
+      this.connexion.setMail(mail);
       this.navCtrl.push(TabsPage);
-     // this.navCtrl.push(RegisterPage);
     }else{
       alert("Mauvais identifiants!!!");
     }
