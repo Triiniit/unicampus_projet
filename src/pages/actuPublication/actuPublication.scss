@@ -1,33 +1,34 @@
 page-actuPublication {
-    //géstion du style de la navbar
-        ion-navbar{
-        background:  $unicampusTercary; 
-    
-    }
-    //géstion du style de la navbar
-    .toolbar-title{
-        color: white;
-         #title{
-             color: white;
-            width: 100%;
-            font-size: 1.1em;
-            text-align: center;
-            background: none;
-            border:0px !important;
-                padding: 0;
-                border:0px !important;
-                &.item-block {
-                    .item-inner {
-                        border-bottom: none;
-                        padding: 0;
-                    }
-                }  
-         }
-    }
-    //supprime le backround de la toolbar ce qui permets de changer la coulleur de la toolbar
-    .toolbar-background{
+       //géstion du style de la navbar
+   ion-navbar{
+    background:  $unicampusTercary; 
+
+}
+//géstion du style de la navbar
+.toolbar-title{
+    color: white;
+     #title{
+         color: white;
+        width: 100%;
+        font-size: 1.1em;
+        text-align: center;
         background: none;
-    }
+        border:0px !important;
+            padding: 0;
+            border:0px !important;
+            &.item-block {
+                .item-inner {
+                    border-bottom: none;
+                    padding: 0;
+                }
+            }  
+     }
+}
+//supprime le backround de la toolbar ce qui permets de changer la coulleur de la toolbar
+.toolbar-background{
+    background: none;
+}
+    //géstion des ion-item pour supprimer le border-bottom qu'ils ont de base
     #infoperso{
         ion-icon{
             color: $unicampusTercary;

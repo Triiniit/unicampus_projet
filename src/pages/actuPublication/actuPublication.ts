@@ -9,8 +9,10 @@ import { ServiceConnexion } from'../../service-connexion';
 })
 export class ActuPublicationPage {
  
-  constructor(public navCtrl: NavController, public connexion : ServiceConnexion) {
+  public sections: String[] = [];
 
+  constructor(public navCtrl: NavController, public connexion : ServiceConnexion) {
+                this.sections = this.connexion.getSections();
   }
 
   

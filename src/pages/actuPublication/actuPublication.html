@@ -23,6 +23,12 @@
       <ion-item>
         <ion-icon name="camera"></ion-icon>
         <ion-icon name="videocam"></ion-icon>
-
+        <ion-item>
+          <ion-select placeholder="section" cancelText="Annuler" ngModel
+          name="section" class="section"
+          #section = "ngModel">
+          <ion-option *ngFor="let section of sections" value="{{ section }}">{{ section }}</ion-option>
+          </ion-select>
+      </ion-item>
       </ion-item>
   </ion-content>
