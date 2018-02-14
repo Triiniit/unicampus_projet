@@ -25,7 +25,7 @@ private connected : Number = 0;
   }
  public presentToast() {
     let toast = this.toastCtrl.create({
-      message: "Bonjour "+ this.connexion.getUserNameByMail,
+      message: "Bonjour "+ this.connexion.getUserNameByMail(),
       duration: 3000,
       position: 'top'
     });
@@ -37,7 +37,7 @@ private connected : Number = 0;
     toast.present();
   }
 public premiereConnexion(){
-  console.log("Bonjour "+ this.connexion.getUserNameByMail);
+  console.log("Bonjour "+ this.connexion.getUserNameByMail());
   if (this.connected != 1){
     this.presentToast();
     this.connected = 1;
