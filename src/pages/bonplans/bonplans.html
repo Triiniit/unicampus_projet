@@ -1,19 +1,33 @@
 <ion-header>
-    <!-- affichage de la navbar dans le code-->
-    <ion-navbar>
-      <ion-title>
-        <!-- le ion-item permet d'avoir un affichage des icones et du text sur une ligne (le item-start sera le premier icone affiché )-->
-        <!-- le item-end sera le dernier icone affiché-->
-        <ion-item id="title">
-          <ion-icon name="chatboxes" item-start></ion-icon>
-          Bon plans
-          <ion-icon name="person" item-end></ion-icon>
-        </ion-item>
-      </ion-title>
-    </ion-navbar>
-  </ion-header>
-  <ion-content>
+  <!-- affichage de la navbar dans le code-->
+  <ion-navbar>
+    <ion-title>
+      <!-- le ion-item permet d'avoir un affichage des icones et du text sur une ligne (le item-start sera le premier icone affiché )-->
+      <!-- le item-end sera le dernier icone affiché-->
+      <ion-item id="title">
+        <ion-icon name="chatboxes" item-start></ion-icon>
+        Bon plans
+        <ion-icon name="person" item-end></ion-icon>
+      </ion-item>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <!-- affichage des bouttons de filtres-->
+  <div class="filtres">
+    <div id="filtre1">Tous</div>
+    <div id="filtre2">Fast-food</div>
+    <div id="filtre3">Sport</div>
+    <div id="filtre4">Autres</div>
+  </div>
+  <ion-item>
+      <ion-select placeholder="date" cancelText="Annuler" ngModel name="section" class="section" #section="ngModel">
+        <ion-option  value="recent">les plus récent</ion-option>
+        <ion-option value="vieux">les plus vieux</ion-option>
+      </ion-select>
+      <ion-select placeholder="ville" cancelText="Annuler" ngModel name="section" class="section" #section="ngModel">
+        <ion-option *ngFor="let ville of villes" value="{{ ville }}">{{ ville }}</ion-option>
+      </ion-select>
+  </ion-item>
 
-    
-  </ion-content>
-
+</ion-content>

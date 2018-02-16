@@ -1,39 +1,93 @@
 page-bonplans {
-    //géstion du style de la navbar
-    ion-navbar{
-        background:  $unicampusTercary; 
-    
+  //géstion du style de la navbar
+  ion-navbar {
+    background: $unicampusTercary;
+  } //géstion du style de la navbar
+  .toolbar-title {
+    color: white;
+    #title {
+      color: white;
+      width: 100%;
+      font-size: 1.1em;
+      text-align: center;
+      background: none;
+      border: 0px !important;
+      padding: 0;
+      border: 0px !important;
+      &.item-block {
+        .item-inner {
+          border-bottom: none;
+          padding: 0;
+        }
+      }
     }
-    //géstion du style de la navbar
-    .toolbar-title{
-        color: white;
-         #title{
-             color: white;
-            width: 100%;
-            font-size: 1.1em;
-            text-align: center;
-            background: none;
-            border:0px !important;
-                padding: 0;
-                border:0px !important;
-                &.item-block {
-                    .item-inner {
-                        border-bottom: none;
-                        padding: 0;
-                    }
-                }  
-         }
-    }
-    //supprime le backround de la toolbar ce qui permets de changer la coulleur de la toolbar
-    .toolbar-background{
-        background: none;
-    }
-    //gestion de la partie scrollable de la page (donc de la page car par défaut elle est scrollable)
-    .scroll-content{
-        background-image:linear-gradient($unicampusPrimary, $unicampusSecondary);
-        display: flex;
-        flex-direction: column;
-
-    }
+  } //supprime le backround de la toolbar ce qui permets de changer la coulleur de la toolbar
+  .toolbar-background {
+    background: none;
+  } //gestion de la partie scrollable de la page (donc de la page car par défaut elle est scrollable)
+  .scroll-content {
+    background-image: linear-gradient($unicampusPrimary, $unicampusSecondary);
+    display: flex;
+    flex-direction: column;
+  }
+  .filtres {
+    background-color: $unicampusTercary;
+    color: white;
+    padding-left: 4%;
+    #filtre1 {
+      border: 2px solid white;
+      text-align: center;
+      display: inline-flex;
+      padding-left: 6%;
+      padding-right: 6%;
       
+    }
+    #filtre2 {
+      border: 2px solid white;
+      text-align: center;
+      display: inline-flex;
+      padding-left: 6%;
+      padding-right: 6%;
+    }
+    #filtre3 {
+      border: 2px solid white;
+      text-align: center;
+      display: inline-flex;
+      padding-left: 6%;
+      padding-right: 6%; 
+    }
+    #filtre4 {
+      border: 2px solid white;
+      text-align: center;
+      display: inline-flex;
+      padding-left: 6%;
+      padding-right: 6%; 
+    }
+  }
+  ion-item{
+    background: none !important;
+    padding: 0;
+    border:0px !important;
+    display: inline-block;
+    &.item-block {
+        .item-inner {
+            border-bottom: none !important;
+            padding: 0;
+            ion-select{
+              padding: 2%;
+              margin-left: 5%;
+                width: 40%;
+                max-width: 40% !important;
+                background: white;
+                border-radius: 40px;
+                color : black !important;
+                border: 2px solid black;
+                
+                &.section {
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+}
 }

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
 import { ServiceConnexion } from'../../service-connexion';
+import { ServiceServeur } from'../../service-serveur';
 
 import { ActuPublicationPage } from'../actuPublication/actuPublication';
 @Component({
@@ -13,7 +14,7 @@ export class ActualitePage {
   // à l'utilisateur du style Bienvenu Prénom NOM
   // si connected est à 1 on affiche plus le message au démarrage de la page 
 private connected : Number = 0;
-  constructor(public navCtrl: NavController, public connexion : ServiceConnexion, private toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController, public connexion : ServiceConnexion, public serveur: ServiceServeur, private toastCtrl: ToastController) {
 
   }
 
@@ -25,7 +26,8 @@ private connected : Number = 0;
   }
  public presentToast() {
     let toast = this.toastCtrl.create({
-      message: "Bonjour "+ this.connexion.getUserNameByMail(),
+      message: "Bonjour ",
+      //+ this.serveur.getUserNameByMail(),
       duration: 3000,
       position: 'top'
     });
@@ -37,7 +39,7 @@ private connected : Number = 0;
     toast.present();
   }
 public premiereConnexion(){
-  console.log("Bonjour "+ this.connexion.getUserNameByMail());
+  //console.log("Bonjour "+ this.serveur.getUserNameByMail());
   if (this.connected != 1){
     this.presentToast();
     this.connected = 1;

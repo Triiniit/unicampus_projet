@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import { RegisterPage } from "../register/register";
 import { TabsPage } from '../tabs/tabs';
 import { ServiceConnexion } from'../../service-connexion';
+import { ServiceServeur } from'../../service-serveur';
 
 
 
@@ -15,7 +16,7 @@ import { ServiceConnexion } from'../../service-connexion';
 export class SigninPage {
 
 
-  constructor(public navCtrl: NavController, public connexion : ServiceConnexion) {
+  constructor(public navCtrl: NavController, public connexion : ServiceConnexion, public serveur : ServiceServeur) {
 
 }
   //envoi l'utilisateur vers la page d'inscription
@@ -24,8 +25,8 @@ export class SigninPage {
   }
 
   conect(mail, mdp) {
-    if (this.connexion.verifLogin(mail,mdp)) {
-      this.connexion.setMail(mail);
+    if (this.serveur.verifLogin(mail,mdp)) {
+      this.serveur.setMail(mail);
       this.navCtrl.push(TabsPage);
     }else{
       alert("Mauvais identifiants!!!");
